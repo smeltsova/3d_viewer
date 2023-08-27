@@ -1,0 +1,85 @@
+\input texinfo
+@setfilename manual
+@settitle 3DViewer_v1.0 manual
+@documentencoding UTF-8
+
+@copying
+Copyright @copyright{} 2023 geniezan shaerosi
+@end copying
+
+@titlepage
+@title 3DViewer_v1.0
+@page
+@vskip 0pt plus 1filll
+@insertcopying
+@end titlepage
+
+@node Top
+@top 3DViewer_v1.0 manual
+
+This is a short 3DViewer_v1.0 manual.
+
+@menu
+* General information::    This section provides general information about the program.
+* Affine transformations::    This section provides information about loading of models from files and applying affine transformations to them.
+* Settings::    This section provides information about visual settings.
+* Screenshot and screencast::    This section provides information about saving images and gifs.
+
+@end menu
+
+@node General information
+@chapter General information
+
+@itemize @bullet
+@item
+In this project, a program to view 3D wireframe models (3D Viewer) is implemented in the C/C++ programming language using the QT version 6.2.
+@item
+The models themselves must be loaded from .obj files and are viewable on the screen with the ability to rotate, scale and translate.
+@item
+The program can be built with Makefile which contains standard set of targets for GNU-programs: all, install, uninstall, clean, dvi, dist, tests, gcov. 
+@item
+Installation directory is src/Application. The program can be opened with "make open" or "open ./Application/3DViewer_1.app".
+@end itemize
+
+
+@node Affine transformations
+@chapter Affine transformations
+@itemize @bullet
+@item
+To load a wireframe model from an obj file (vertices and surfaces list support only) use button "open file".
+@item
+After succesful loading of a model the program will show file name and number of vertices and edges above a visualisation area.
+@item
+To translate the model by a given distance in relation to the X, Y, Z axes use sliders or scroll boxes.
+@item
+To rotate the model by a given angle relative to its X, Y, Z axes use sliders or scroll boxes (-180 to 180 degrees).
+@item
+To scale the model by a given value along its X, Y, Z axes use sliders (0.01 to 10) or scroll boxes (0.01 to 100).
+@item
+To scale the model along all axes keeping original ratio check box "keep ratio 1:1:1" and scale along any axis.
+@end itemize
+
+
+@node Settings
+@chapter Settings
+@itemize @bullet
+@item
+It is possible to customize the type of projection (parallel and central).
+@item
+The program allows setting up the type (solid, dashed), color and thickness of the edges, display method (none, circle, square), color and size of the vertices, the background color.
+@item
+Settings are saved between program restarts.
+@item
+The "reset all" button allows to update the position of the model in space to its original position (as in the .obj file) and also set the default settings.
+@end itemize
+
+
+@node Screenshot and screencast
+@chapter Screenshot and screencast
+@itemize @bullet
+@item
+The "save as" button allows to save the captured (rendered) images as bmp and jpeg files.
+@item
+The program allows recording small screencasts by the "gif" button - the current custom affine transformation of the loaded object into gif-animation (640x480, 10fps, 5s).
+@end itemize
+@bye
